@@ -1,0 +1,30 @@
+package com.tongminhnhut.android_compose.compose_app.presentation.home
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import com.tongminhnhut.android_compose.core.navigation.Screen
+
+@Composable
+fun HomeScreen(modifier: Modifier = Modifier, rootNavController: NavController) {
+
+    Scaffold {
+        paddingValues ->
+
+        Column(modifier = modifier.padding(paddingValues)) {
+            Button(onClick = {
+                rootNavController.navigate(Screen.SignUp.route)
+            }) {
+
+                Text("goTo Sign Up")
+            }
+        }
+
+    }
+
+}
