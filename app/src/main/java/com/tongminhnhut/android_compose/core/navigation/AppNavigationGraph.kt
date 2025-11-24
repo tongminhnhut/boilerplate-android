@@ -10,6 +10,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
+import com.tongminhnhut.android_compose.compose_app.presentation.component.ButtonScreen
+import com.tongminhnhut.android_compose.compose_app.presentation.component.ComponentScreen
+import com.tongminhnhut.android_compose.compose_app.presentation.component.ImageScreen
+import com.tongminhnhut.android_compose.compose_app.presentation.component.InputScreen
+import com.tongminhnhut.android_compose.compose_app.presentation.component.ListViewScreen
 import com.tongminhnhut.android_compose.compose_app.presentation.home.HomeScreen
 import com.tongminhnhut.android_compose.compose_app.presentation.login.LoginScreen
 import com.tongminhnhut.android_compose.compose_app.presentation.main.MainScreen
@@ -41,6 +46,24 @@ fun NavGraphBuilder.mainController(rootNavHostController: NavHostController){
         })
         composable(route = Screen.SignUp.route){
             SignUpScreen()
+        }
+        composable(route = Screen.Components.route){
+            ComponentScreen(rootNavController = rootNavHostController)
+        }
+        composable(route = Screen.Input.route){
+            InputScreen(rootNavController = rootNavHostController)
+        }
+        composable(route = Screen.Button.route){
+            ButtonScreen(rootNavController = rootNavHostController)
+        }
+        composable(route = Screen.DropDown.route){
+            InputScreen(rootNavController = rootNavHostController)
+        }
+        composable(route = Screen.ImageView.route){
+            ImageScreen(rootNavController = rootNavHostController)
+        }
+        composable(route = Screen.ListView.route){
+            ListViewScreen(rootNavController = rootNavHostController)
         }
     }
 }

@@ -14,7 +14,13 @@ enum class Route(val value: String) {
     HOME("home"),
     SETTING("setting"),
     PROFILE("profile"),
-    CHAT("chat")
+    CHAT("chat"),
+    COMPONENTS("components"),
+    INPUT("input"),
+    BUTTON("button"),
+    DROP_DOWN("drop_down"),
+    IMAGE_VIEW("IMAGE_VIEW"),
+    LIST_VIEW("LIST_VIEW"),
 
 }
 
@@ -36,6 +42,12 @@ sealed class Screen(
     data object Profile : Screen(Route.PROFILE.value)
     data object Login : Screen(Route.LOGIN.value)
     data object SignUp : Screen(Route.SIGN_UP.value)
+    data object Components : Screen(Route.COMPONENTS.value)
+    data object Input : Screen(Route.INPUT.value)
+    data object Button : Screen(Route.BUTTON.value)
+    data object DropDown : Screen(Route.DROP_DOWN.value)
+    data object ImageView : Screen(Route.IMAGE_VIEW.value)
+    data object ListView : Screen(Route.LIST_VIEW.value)
 
 
 }

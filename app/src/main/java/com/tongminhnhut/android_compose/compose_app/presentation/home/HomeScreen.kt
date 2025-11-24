@@ -7,21 +7,21 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.tongminhnhut.android_compose.core.navigation.Screen
+import com.tongminhnhut.android_compose.core.navigation.AppCoordinator
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier, rootNavController: NavController) {
 
-    Scaffold {
-        paddingValues ->
-
-        Column(modifier = modifier.padding(paddingValues)) {
+    Scaffold { paddingValues ->
+        Column(modifier = modifier
+            .padding(paddingValues)
+            .padding(16.dp)) {
             Button(onClick = {
-                rootNavController.navigate(Screen.SignUp.route)
+                AppCoordinator.pushToComponentScreen(rootNavController)
             }) {
-
-                Text("goTo Sign Up")
+                Text("Open Components View")
             }
         }
 

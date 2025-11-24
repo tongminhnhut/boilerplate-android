@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -35,7 +36,7 @@ android {
         }
 
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://api.coincap.io/v3/\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/\"")
         }
     }
 
@@ -107,5 +108,10 @@ dependencies {
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
+    implementation(libs.coil.compose)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    implementation(platform(libs.firebase.bom))
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
 }

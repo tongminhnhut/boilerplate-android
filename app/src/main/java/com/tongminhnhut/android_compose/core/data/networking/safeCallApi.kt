@@ -1,16 +1,16 @@
 package com.tongminhnhut.android_compose.core.data.networking
 
 import com.tongminhnhut.android_compose.core.domain.NetworkError
-import   com.tongminhnhut.android_compose.core.domain.Result
+import   com.tongminhnhut.android_compose.core.domain.XResult
 
 suspend inline fun <T> safeCallApi(
     crossinline apiCall: suspend () -> T
-): Result<T, NetworkError> {
+): XResult<T, NetworkError> {
     return try {
         val response = apiCall()
-        Result.Success(response)
+        XResult.Success(response)
     } catch (e: Exception) {
-        Result.Error(mapToNetworkError(e))
+        XResult.Error(mapToNetworkError(e))
     }
 }
 

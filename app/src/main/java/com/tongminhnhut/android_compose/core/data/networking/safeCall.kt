@@ -9,26 +9,26 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.serialization.SerializationException
-import com.tongminhnhut.android_compose.core.domain.Result
+import com.tongminhnhut.android_compose.core.domain.XResult
 
 inline fun <reified T> safeCallFlow(
     crossinline execute: suspend () -> HttpResponse
-): Flow<Result<T, NetworkError>> = flow {
+): Flow<XResult<T, NetworkError>> = flow {
     val response = try {
         execute()
     } catch (e: UnresolvedAddressException) {
-        emit(Result.Error(NetworkError.NO_INTERNET))
+        emit(XResult.Error(NetworkError.NO_INTERNET))
         return@flow
     } catch (e: SerializationException) {
-        emit(Result.Error(NetworkError.SERIALIZATION))
+        emit(XResult.Error(NetworkError.SERIALIZATION))
         return@flow
     } catch (e: Exception) {
         kotlin.coroutines.coroutineContext.ensureActive()
-        emit(Result.Error(NetworkError.UNKNOWN))
+        emit(XResult.Error(NetworkError.UNKNOWN))
         return@flow
     }
 
-    val result: Result<T, NetworkError> = responseToResult(response)
+    val result: XResult<T, NetworkError> = responseToResult(response)
     emit(result)
 
 }.flowOn(Dispatchers.IO)

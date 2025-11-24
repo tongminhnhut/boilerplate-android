@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "303892952474",
+    "project_id": "android-clean-architectu-fca64",
+    "storage_bucket": "android-clean-architectu-fca64.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303892952474:android:c6cd40dcc30574ed593623",
+        "android_client_info": {
+          "package_name": "com.tongminhnhut.android_compose"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr3RchU1I1Ly_S6e1SYWYDQ17KFGOWr7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
